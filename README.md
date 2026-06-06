@@ -26,4 +26,4 @@ assignment. No frameworks used.
 - Apphie Pauline – Backend & Database
 - Vivian Kipkalum Jemuge – JS Validation & Documentation
 
-ICS 2203 – Internet Application Programming | 2024/2025
+ICS 2203 – Internet Application Programming Project
