@@ -22,8 +22,8 @@ assignment. No frameworks used.
 4. Open `http://localhost/ComplaintHub/home.php`
 
 ## Group Members
-- Nevins Symons – Frontend & UI/UX
-- Apphie Pauline – Backend & Database
+- Nevins Symons Sawo– Frontend & UI/UX
+- Apphie Pauline Indakwa– Backend & Database
 - Vivian Kipkalum Jemuge – JS Validation & Documentation
 
 ICS 2203 – Internet Application Programming Project
