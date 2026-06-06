@@ -1,16 +1,6 @@
--- ============================================
--- ComplaintHub Database Setup
--- Run this in phpMyAdmin or MySQL terminal
--- ============================================
-
--- Create and select the database
 CREATE DATABASE IF NOT EXISTS complainthub;
 USE complainthub;
 
--- -----------------------------------------------
--- TABLE: companies
--- Stores registered company accounts
--- -----------------------------------------------
 CREATE TABLE IF NOT EXISTS companies (
     id INT AUTO_INCREMENT PRIMARY KEY,
     company_name VARCHAR(150) NOT NULL,
@@ -18,10 +8,7 @@ CREATE TABLE IF NOT EXISTS companies (
     password VARCHAR(255) NOT NULL
 );
 
--- -----------------------------------------------
--- TABLE: complaints
--- Stores complaints submitted by users
--- -----------------------------------------------
+
 CREATE TABLE IF NOT EXISTS complaints (
     id INT AUTO_INCREMENT PRIMARY KEY,
     company_id INT NOT NULL,
@@ -32,9 +19,7 @@ CREATE TABLE IF NOT EXISTS complaints (
     FOREIGN KEY (company_id) REFERENCES companies(id) ON DELETE CASCADE
 );
 
--- -----------------------------------------------
--- Sample Data (optional - for testing)
--- -----------------------------------------------
+
 INSERT INTO companies (company_name, email, password) VALUES
 ('Safaricom PLC', 'safaricom@demo.com', MD5('demo1234')),
 ('KCB Bank', 'kcb@demo.com', MD5('demo1234'));
