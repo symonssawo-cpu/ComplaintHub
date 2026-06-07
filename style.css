@@ -5,7 +5,6 @@
 }
 
 :root {
-    /* Updated Sophisticated Teal Theme */
     --primary:      #0f766e;   
     --primary-dark: #0f514b;
     --danger:       #e11d48;
@@ -18,12 +17,10 @@
     --text:         #1e293b;
     --muted:        #64748b;
     --border:       #e2e8f0;
-    /* Added soft shadow from Code 2 */
     --shadow:       0 4px 6px -1px rgba(0,0,0,0.05);
 }
 
 body {
-    /* Updated Typography from Code 2 */
     font-family: 'Inter', system-ui, sans-serif;
     background-color: var(--bg);
     color: var(--text);
@@ -42,7 +39,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ---------- Navigation Bar ---------- */
+/* - Navigation Bar  */
 .navbar {
     background-color: var(--white);
     border-bottom: 1px solid var(--border);
@@ -93,7 +90,7 @@ a:hover {
     font-size: 0.9rem;
 }
 
-/* ---------- Navigation Buttons ---------- */
+/* Navigation Buttons */
 .btn-nav {
     background-color: var(--primary);
     color: var(--white) !important;
@@ -117,13 +114,13 @@ a:hover {
     background-color: var(--danger) !important;
 }
 
-/* ---------- General Buttons ---------- */
+/*  General Buttons  */
 .btn {
     display: inline-block;
     padding: 0.6rem 1.25rem;
-    border-radius: 6px; /* Smoother borders */
+    border-radius: 6px; 
     font-size: 1rem;
-    font-weight: 500; /* Softer weight */
+    font-weight: 500; 
     cursor: pointer;
     border: none;
     transition: transform 0.1s, opacity 0.2s;
@@ -162,9 +159,8 @@ a:hover {
     text-align: center;
 }
 
-/* ---------- Hero Section ---------- */
+/*  Hero Section  */
 .hero {
-    /* Adjusted gradient to match the teal theme */
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
     color: var(--white);
     padding: 5rem 2rem;
@@ -198,7 +194,7 @@ a:hover {
     flex-wrap: wrap;
 }
 
-/* ---------- Features Section ---------- */
+/*  Features Section  */
 .features {
     padding: 4rem 2rem;
     background-color: var(--bg);
@@ -240,7 +236,7 @@ a:hover {
 .feature-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--primary); /* Added color to icons */
+    color: var(--primary); 
 }
 
 .feature-card h3 {
@@ -255,7 +251,7 @@ a:hover {
     font-size: 0.95rem;
 }
 
-/* ---------- Forms ---------- */
+/*  Forms  */
 .form-wrapper {
     flex: 1;
     display: flex;
@@ -302,7 +298,7 @@ a:hover {
     color: var(--text);
 }
 
-/* Updated Input Styling */
+/*  Input Styling */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -349,7 +345,7 @@ a:hover {
     font-size: 0.9rem;
 }
 
-/* ---------- Alert Messages ---------- */
+/*  Alert Messages  */
 .alert {
     padding: 1rem;
     border-radius: 6px;
@@ -370,7 +366,7 @@ a:hover {
     border: 1px solid #bbf7d0;
 }
 
-/* ---------- Dashboard ---------- */
+/*  Dashboard  */
 .dashboard-header {
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
     color: var(--white);
@@ -418,7 +414,7 @@ a:hover {
     padding: 2rem;
 }
 
-/* ---------- Table ---------- */
+/*  Table  */
 .table-wrapper {
     overflow-x: auto;
     border-radius: 10px;
@@ -473,7 +469,7 @@ a:hover {
     font-size: 0.85rem;
 }
 
-/* ---------- Empty State ---------- */
+/*  Empty State  */
 .no-complaints {
     text-align: center;
     padding: 4rem 1rem;
@@ -491,7 +487,7 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
-/* ---------- Footer ---------- */
+/*  Footer  */
 .footer {
     background-color: var(--white);
     border-top: 1px solid var(--border);
@@ -502,7 +498,7 @@ a:hover {
     margin-top: auto;
 }
 
-/* ---------- Responsive ---------- */
+/*  Responsive  */
 @media (max-width: 640px) {
     .hero h1 {
         font-size: 2rem;
