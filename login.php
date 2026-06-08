@@ -19,12 +19,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Please enter both email and password.";
 
     } else {
+        // Select the hash from the database based on the email
         $sql    = "SELECT id, company_name, password FROM companies WHERE email = '$email'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) == 1) {
             $row = mysqli_fetch_assoc($result);
             
+            // Use password_verify to check the input against the stored hash
             if (password_verify($password, $row['password'])) {
                 $_SESSION['company_id']   = $row['id'];
                 $_SESSION['company_name'] = $row['company_name'];
