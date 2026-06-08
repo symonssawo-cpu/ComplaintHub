@@ -1,5 +1,7 @@
+
 CREATE DATABASE IF NOT EXISTS complainthub;
 USE complainthub;
+
 
 CREATE TABLE IF NOT EXISTS companies (
     id INT AUTO_INCREMENT PRIMARY KEY,
