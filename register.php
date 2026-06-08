@@ -38,9 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysqli_num_rows($check_result) > 0) {
             $error = "This email is already registered. Please login.";
         } else {
-            $hashed_password = md5($password);
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-            // Insert new company into the database
             $sql = "INSERT INTO companies (company_name, email, password)
                     VALUES ('$company_name', '$email', '$hashed_password')";
 
@@ -63,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-brand"><a href="home.php"> ComplaintHub</a></div>
         <div class="nav-links">
@@ -72,29 +70,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </nav>
 
-    <!-- Registration Form -->
     <div class="form-wrapper">
         <div class="form-card">
             <h2>Register Your Company</h2>
             <p class="form-subtitle">Create an account to manage your complaints.</p>
 
-            <!-- Display error message if any -->
             <?php if ($error): ?>
                 <div class="alert alert-error">
-                    <?php 
-                    echo $error; 
-                    ?>
-                    </div>
+                    <?php echo $error; ?>
+                </div>
             <?php endif; ?>
 
-            <!-- Display success message if any -->
             <?php if ($success): ?>
                 <div class="alert alert-success">
-                    <?php
-                     echo $success; ?></div>
+                    <?php echo $success; ?>
+                </div>
             <?php endif; ?>
 
-            <!-- Registration Form -->
             <form action="register.php" method="POST" id="registerForm" novalidate>
 
                 <div class="form-group">
@@ -130,7 +122,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
-   
     <script src="script.js"></script>
 </body>
 </html>
