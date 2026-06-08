@@ -19,19 +19,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Please enter both email and password.";
 
     } else {
-        $hashed_password = md5($password);
-
-        $sql    = "SELECT id, company_name FROM companies
-                   WHERE email = '$email' AND password = '$hashed_password'";
+        $sql    = "SELECT id, company_name, password FROM companies WHERE email = '$email'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) == 1) {
             $row = mysqli_fetch_assoc($result);
-            $_SESSION['company_id']   = $row['id'];
-            $_SESSION['company_name'] = $row['company_name'];
+            
+            if (password_verify($password, $row['password'])) {
+                $_SESSION['company_id']   = $row['id'];
+                $_SESSION['company_name'] = $row['company_name'];
 
-            header("Location: dashboard.php");
-            exit();
+                header("Location: dashboard.php");
+                exit();
+            } else {
+                $error = "Invalid email or password. Please try again.";
+            }
         } else {
             $error = "Invalid email or password. Please try again.";
         }
@@ -89,7 +91,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p class="form-footer">No account yet? <a href="register.php">Register your company</a></p>
         </div>
     </div>
-
 
     <script src="script.js"></script>
 </body>
